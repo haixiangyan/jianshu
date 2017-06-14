@@ -14,6 +14,7 @@ import './mock'
 
 // 引入公用的 CSS 样式
 import '@/commons/font-awesome-4.7.0/css/font-awesome.min.css'
+import '@/commons/animate.css/animate.min.css'
 import "@/commons/reset.css"
 
 /* eslint-disable no-new */

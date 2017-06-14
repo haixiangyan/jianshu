@@ -37,6 +37,7 @@
     </ul>
   
     <el-button @click="send">默认按钮</el-button>
+    <h1 class="animated infinite bounce">Example</h1>
   </div>
 </template>
 
