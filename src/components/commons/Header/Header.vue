@@ -38,43 +38,77 @@
                 </el-menu-item>
             </el-submenu>
     
-            <el-submenu class="jian-header-user jian-header-sub-menu" index="5">
+            <el-popover ref="text-setting" placement="bottom" width="250" trigger="hover" class="jian-text-setting-popover">
+                <el-row class="jian-text-setting-item">
+                    <el-col class="jian-night-setting" :span="12">
+                        <span><i class="fa fa-moon-o"></i>夜间模式</span>
+                    </el-col>
+                    <el-col :span="12">
+                        <el-switch v-model="isNight" on-text="夜间" off-text="日间">
+                        </el-switch>
+                    </el-col>
+                </el-row>
+                <el-row class="jian-text-setting-item">
+                    <el-col :span="12">
+                        <el-switch v-model="isSong" on-text="宋体" off-text="黑体">
+                        </el-switch>
+                    </el-col>
+                    <el-col class="jian-night-setting" :span="12">
+                    <span><i class="fa fa-font"></i>字体模式</span>
+                    </el-col>
+                </el-row>
+                <el-row class="jian-text-setting-item">
+                    <el-col class="jian-night-setting" :span="12">
+                        <span><i class="fa fa-chain"></i>简繁模式</span>
+                    </el-col>
+                    <el-col :span="12">
+                        <span>
+                            <el-switch  v-model="isJian" on-text="简体" off-text="繁体">
+                            </el-switch>
+                        </span>
+                    </el-col>
+                </el-row>
+            </el-popover>
+    
+            <el-menu-item class="jian-header-text-setting" index="5">
+                <span v-popover:text-setting>Aa</span>
+            </el-menu-item>
+    
+            <el-submenu class="jian-header-user jian-header-sub-menu" index="6">
                 <template slot="title">
-                   <img src="/static/image/jian-header/avatar.jpg" alt="">
-                   <!--<i class="fa fa-money"></i>-->
-                    <!--<span> 赞赏 </span>-->
+                    <img src="/static/image/jian-header/avatar.jpg" alt="">
                 </template>
-                <el-menu-item index="5-1">
+                <el-menu-item index="6-1">
                     <i class="fa fa-user"></i>
                     <span> 我的主页 </span>
                 </el-menu-item>
-                <el-menu-item index="5-2">
+                <el-menu-item index="6-2">
                     <i class="fa fa-bookmark"></i>
                     <span> 收藏的文章 </span>
                 </el-menu-item>
-                <el-menu-item index="5-3">
+                <el-menu-item index="6-3">
                     <i class="fa fa-heart"></i>
                     <span> 喜欢的文章 </span>
                 </el-menu-item>
-                <el-menu-item index="5-4">
+                <el-menu-item index="6-4">
                     <i class="fa fa-money"></i>
                     <span> 我的钱包 </span>
                 </el-menu-item>
-                <el-menu-item index="5-5">
+                <el-menu-item index="6-5">
                     <i class="fa fa-cog"></i>
                     <span> 设置 </span>
                 </el-menu-item>
-                <el-menu-item index="5-6">
+                <el-menu-item index="6-6">
                     <i class="fa fa-comment"></i>
                     <span> 帮肋和反馈 </span>
                 </el-menu-item>
-                <el-menu-item index="5-7">
+                <el-menu-item index="6-7">
                     <i class="fa fa-sign-out"></i>
                     <span> 退出 </span>
                 </el-menu-item>
             </el-submenu>
     
-            <el-menu-item class="jian-no-hover-item jian-write-wrapper" index="6">
+            <el-menu-item class="jian-no-hover-item jian-write-wrapper" index="7">
                 <el-button icon="edit" class="jian-write-btn">写文章</el-button>
             </el-menu-item>
     
@@ -91,7 +125,10 @@ export default {
             searchForm: {
                 search: ''
             },
-            isZoom: null
+            isZoom: null,
+            isNight: false,
+            isSong: false,
+            isJian: true
         }
     },
     methods: {
@@ -155,7 +192,6 @@ export default {
 }
 
 .jian-header-sub-menu img {
-
     max-width: 35px;
     max-height: 35px;
     border-radius: 50%;
@@ -163,10 +199,20 @@ export default {
     transform: translateY(29%);
 }
 
-.jian-header-user,
-.jian-write-wrapper {
-    position: relative;
-    left: 40%;
+.jian-header-text-setting {
+    margin-left: 40%;
+}
+/*夜间模式气泡*/
+
+.jian-text-setting-item {
+    padding: 20px;
+    font-size: 17px;
+}
+
+.jian-text-setting-item div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 /*写文章按钮*/
@@ -181,6 +227,12 @@ export default {
     background: white;
     border-bottom: none;
 }
+
+
+
+
+
+
 
 
 /*搜索框*/
