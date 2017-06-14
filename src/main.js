@@ -16,6 +16,7 @@ import './mock'
 import '@/commons/font-awesome-4.7.0/css/font-awesome.min.css'
 import '@/commons/animate.css/animate.min.css'
 import "@/commons/reset.css"
+import '@/commons/style.css'
 
 /* eslint-disable no-new */
 new Vue({
