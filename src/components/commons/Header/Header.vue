@@ -10,10 +10,13 @@
                     创作你的创作
                 </el-col>
                 <el-col class="jian-backup-download-free" :span="7">
-                    <el-button type="primary">主要按钮</el-button>
+                    <el-button type="primary">免费下载</el-button>
                 </el-col>
             </el-row>
         </div>
+
+        <!--小设备的空格-->
+        <div class="jian-backup-space"></div>
     
         <!--优先选择此 Header-->
         <el-menu :default-active="activeIndex" class="jian-header-menu jian-main-header" mode="horizontal" @select="handleSelect">
@@ -171,7 +174,6 @@ export default {
     },
     methods: {
         handleSelect(key, keyPath) {
-            console.log(key, keyPath);
         },
         search() {
             console.log('search' + this.searchForm.search);
@@ -194,7 +196,13 @@ export default {
     }
 
     .jian-backup-header-download {
+        position: fixed;
+        top: 0;
+        left: 0;
         box-shadow: 0 4px 8px -4px rgb(150, 150, 150);
+        width: 100%;
+        background: white;
+        z-index: 2;
     }
 
     .jian-backup-download-logo {
@@ -222,6 +230,10 @@ export default {
     .jian-backup-download-free button {
         background: rgb(234, 111, 90);
         border: none;
+    }
+
+    .jian-backup-space {
+        margin-top: 50px;
     }
 }
 
