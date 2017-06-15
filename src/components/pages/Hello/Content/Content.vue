@@ -26,10 +26,14 @@
         </el-col>
     
         <!--内容栏的右侧-->
-        <el-col class="jian-recommend jian-origin" :span="8">
+        <el-col class="jian-recommend jian-origin-show" :span="8">
             <!--热门话题-->
             <el-row class="jian-hot-topics">
                 <jian-hot-topics-item v-for="(hotTopicsItem, index) in hotTopcs" :key="index" :hotTopicsItem="hotTopicsItem"></jian-hot-topics-item>
+            </el-row>
+            <!--下载 App-->
+            <el-row class="jian-hot-topics">
+                <jian-download-app></jian-download-app>
             </el-row>
         </el-col>
     </el-row>
@@ -39,6 +43,7 @@
 import JianCatalogItem from '@/components/pages/Hello/Content/CatalogItem/CatalogItem'
 import JianBackupCatalogItem from '@/components/pages/Hello/Content/CatalogItem/BackupCatalogItem'
 import JianHotTopicsItem from '@/components/pages/Hello/Content/HotTopicsItem/HotTopicsItem'
+import JianDownloadApp from '@/components/pages/Hello/Content/DownloadApp/DownloadApp'
 
 export default {
     data() {
@@ -50,7 +55,8 @@ export default {
     components: {
         'jian-catalog-item': JianCatalogItem,
         'jian-backup-catalog-item': JianBackupCatalogItem,
-        'jian-hot-topics-item': JianHotTopicsItem
+        'jian-hot-topics-item': JianHotTopicsItem,
+        'jian-download-app': JianDownloadApp
     },
     beforeMount() {
         // 发送请求，获取分类
