@@ -1,8 +1,7 @@
 <template>
     <div class="jian-header-wrapper">
-    
-        <!--<div class="line"></div>-->
-        <el-menu :default-active="activeIndex" class="jian-header-menu" mode="horizontal" @select="handleSelect">
+        <!--优先选择此 Header-->
+        <el-menu :default-active="activeIndex" class="jian-header-menu jian-main-header" mode="horizontal" @select="handleSelect">
             <el-menu-item class="jian-header-logo-wrapper" index="1">
                 <img src="/static/image/jian-header/logo.png" alt="">
             </el-menu-item>
@@ -41,7 +40,8 @@
             <el-popover ref="text-setting" placement="bottom" width="250" trigger="hover" class="jian-text-setting-popover">
                 <el-row class="jian-text-setting-item">
                     <el-col class="jian-night-setting" :span="12">
-                        <span><i class="fa fa-moon-o"></i>夜间模式</span>
+                        <span>
+                            <i class="fa fa-moon-o"></i>夜间模式</span>
                     </el-col>
                     <el-col :span="12">
                         <el-switch v-model="isNight" on-text="夜间" off-text="日间">
@@ -54,16 +54,18 @@
                         </el-switch>
                     </el-col>
                     <el-col class="jian-night-setting" :span="12">
-                    <span><i class="fa fa-font"></i>字体模式</span>
+                        <span>
+                            <i class="fa fa-font"></i>字体模式</span>
                     </el-col>
                 </el-row>
                 <el-row class="jian-text-setting-item">
                     <el-col class="jian-night-setting" :span="12">
-                        <span><i class="fa fa-chain"></i>简繁模式</span>
+                        <span>
+                            <i class="fa fa-chain"></i>简繁模式</span>
                     </el-col>
                     <el-col :span="12">
                         <span>
-                            <el-switch  v-model="isJian" on-text="简体" off-text="繁体">
+                            <el-switch v-model="isJian" on-text="简体" off-text="繁体">
                             </el-switch>
                         </span>
                     </el-col>
@@ -111,7 +113,31 @@
             <el-menu-item class="jian-no-hover-item jian-write-wrapper" index="7">
                 <el-button icon="edit" class="jian-write-btn">写文章</el-button>
             </el-menu-item>
+        </el-menu>
     
+        <!--缩小后的 Header-->
+        <el-menu :default-active="activeIndex" class="jian-header-menu jian-backup-header" mode="horizontal" @select="handleSelect">
+            <el-menu-item class="jian-header-logo-wrapper jian-backup-header-logo" index="1">
+                <img src="/static/image/jian-header/logo.png" alt="">
+            </el-menu-item>
+    
+            <el-submenu class="jian-header-sub-menu jian-backup-header-body" index="2">
+                <template slot="title">
+                    <i class="el-icon-more"></i>
+                </template>
+                <el-menu-item index="2-1">
+                    <i class="fa fa-compass"></i>
+                    <span> 发现 </span>
+                </el-menu-item>
+                <el-menu-item index="2-2">
+                    <i class="fa fa-book"></i>
+                    <span> 关注 </span>
+                </el-menu-item>
+                <el-menu-item index="2-3">
+                    <i class="fa fa-bell-o"></i>
+                    <span> 消息 </span>
+                </el-menu-item>
+            </el-submenu>
         </el-menu>
     
     </div>
@@ -143,8 +169,30 @@ export default {
 </script>
 
 <style scoped>
-/*部样式*/
+/*媒体查询*/
+/*媒体查询*/
+@media screen and (max-width: 960px) {
 
+    .jian-main-header {
+        display: none;
+    }
+
+    .jian-backup-header {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .jian-main-header {
+        display: block;
+    }
+
+    .jian-backup-header{
+        display: none;
+    }
+}
+
+/*头部样式*/
 .jian-header-wrapper {
     border-bottom: 1px solid rgb(240, 240, 240);
 }
@@ -164,6 +212,17 @@ export default {
 
 .is-active {
     color: rgb(234, 111, 90);
+}
+
+/*备选头部样式*/
+.jian-backup-header-logo,
+.jian-backup-header-body {
+    width: 100%;
+    text-align: center;
+}
+
+.jian-backup-header-logo > img {
+    margin: 0 auto;
 }
 
 /*头部 logo 样式*/
@@ -202,6 +261,7 @@ export default {
 .jian-header-text-setting {
     margin-left: 40%;
 }
+
 /*夜间模式气泡*/
 
 .jian-text-setting-item {
@@ -227,13 +287,5 @@ export default {
     background: white;
     border-bottom: none;
 }
-
-
-
-
-
-
-
-
 /*搜索框*/
 </style>
