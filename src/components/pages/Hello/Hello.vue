@@ -1,7 +1,10 @@
 <template>
   <div class="jian-hello">
+    <!--首页头部-->
     <jian-header></jian-header>
+    <!--首页轮播图-->
     <jian-carousel></jian-carousel>
+    <!--首页的主要内容-->
     <jian-hello-content></jian-hello-content>
   </div>
 </template>
