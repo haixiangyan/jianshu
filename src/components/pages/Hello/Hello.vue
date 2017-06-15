@@ -2,6 +2,7 @@
   <div class="jian-hello">
     <jian-header></jian-header>
     <jian-carousel></jian-carousel>
+    <jian-hello-content></jian-hello-content>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 // 引入 header 头部
 import JianHeader from '@/components/commons/Header/Header'
 import JianCarousel from '@/components/pages/Hello/Carousel/Carousel'
+import JianHelloContent from '@/components/pages/Hello/Content/Content'
 
 export default {
   name: 'hello',
@@ -23,7 +25,8 @@ export default {
   },
   components: {
     'jian-header': JianHeader,
-    'jian-carousel': JianCarousel
+    'jian-carousel': JianCarousel,
+    'jian-hello-content': JianHelloContent
   }
 }
 </script>

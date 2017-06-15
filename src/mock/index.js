@@ -1,9 +1,14 @@
 import Mock from 'mockjs'
 
+// 模板
 import { login } from './front-page.js'
 
+// 首页请求路由
+import { catalog } from './catalog.js'
+
 let data = [].concat(
-    login
+    login,
+    catalog
 );
 
 data.forEach((res) => {
