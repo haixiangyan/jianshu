@@ -15,8 +15,6 @@
         <span>IOS</span>
       </el-button>
     </div>
-
-    hello
   </a>
 </template>
 

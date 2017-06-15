@@ -35,6 +35,10 @@
             <el-row class="jian-hot-topics">
                 <jian-download-app></jian-download-app>
             </el-row>
+            <!--推荐的作者-->
+            <el-row class="jian-re-writers">
+                <jian-re-writer-wrapper></jian-re-writer-wrapper>
+            </el-row>
         </el-col>
     </el-row>
 </template>
@@ -44,6 +48,7 @@ import JianCatalogItem from '@/components/pages/Hello/Content/CatalogItem/Catalo
 import JianBackupCatalogItem from '@/components/pages/Hello/Content/CatalogItem/BackupCatalogItem'
 import JianHotTopicsItem from '@/components/pages/Hello/Content/HotTopicsItem/HotTopicsItem'
 import JianDownloadApp from '@/components/pages/Hello/Content/DownloadApp/DownloadApp'
+import JianReWriterWrapper from '@/components/pages/Hello/Content/ReWriterWrapper/ReWriterWrapper'
 
 export default {
     data() {
@@ -56,7 +61,8 @@ export default {
         'jian-catalog-item': JianCatalogItem,
         'jian-backup-catalog-item': JianBackupCatalogItem,
         'jian-hot-topics-item': JianHotTopicsItem,
-        'jian-download-app': JianDownloadApp
+        'jian-download-app': JianDownloadApp,
+        'jian-re-writer-wrapper': JianReWriterWrapper
     },
     beforeMount() {
         // 发送请求，获取分类
