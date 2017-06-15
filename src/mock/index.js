@@ -5,10 +5,12 @@ import { login } from './front-page.js'
 
 // 首页请求路由
 import { catalog } from './catalog.js'
+import { hotTopics } from './hotTopics'
 
 let data = [].concat(
     login,
-    catalog
+    catalog,
+    hotTopics
 );
 
 data.forEach((res) => {
