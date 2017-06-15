@@ -1,5 +1,5 @@
 <template>
-    <div class="jian-carousel-wrapper">
+    <div class="jian-carousel-wrapper jian-origin-width jian-backup-width">
         <el-carousel class="jian-carousel" :interval="4000" type="card" height="250px">
             <el-carousel-item v-for="item in carouselImages" :key="item">
                 <img :src="item.src" alt="Carousel Image">
@@ -38,6 +38,10 @@ export default {
     .jian-backup-img-wrapper {
         display: block;
     }
+
+    .jian-backup-width {
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 960px) {
@@ -48,11 +52,14 @@ export default {
     .jian-backup-img-wrapper {
         display: none;
     }
+
+    .jian-origin-width {
+        width: 75%;
+    }
 }
 
 .jian-carousel-wrapper {
     margin: 0 auto;
-    width: 75%;
 }
 
 /*轮播图的图片*/

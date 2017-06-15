@@ -6,11 +6,13 @@ import { login } from './front-page.js'
 // 首页请求路由
 import { catalog } from './catalog.js'
 import { hotTopics } from './hotTopics'
+import { reWriter } from './reWriter'
 
 let data = [].concat(
     login,
     catalog,
-    hotTopics
+    hotTopics,
+    reWriter
 );
 
 data.forEach((res) => {

@@ -14,11 +14,11 @@ export default {
 
 .jian-backup-catalog-wrapper {
     display: inline-block;
-    padding: 10px;
-    margin: 0 18px 18px 0;
+    padding: 7px;
+    margin: 0 15px 15px 0;
     text-decoration: none;
     color: rgb(234, 111, 90);
-    font-size: 14px;
+    font-size: 13px;
     border-radius: 4px;
     border: 1px solid rgb(234, 111, 90);
 }

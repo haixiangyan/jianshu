@@ -1,5 +1,20 @@
 <template>
     <div class="jian-header-wrapper">
+        <!--免费下载-->
+        <div class="jian-backup-header-download">
+            <el-row>
+                <el-col class="jian-backup-download-logo" :span="3">
+                    <img src="/static/image/jian-header/logo.png" alt="">
+                </el-col>
+                <el-col class="jian-backup-download-text" :span="14">
+                    创作你的创作
+                </el-col>
+                <el-col class="jian-backup-download-free" :span="7">
+                    <el-button type="primary">主要按钮</el-button>
+                </el-col>
+            </el-row>
+        </div>
+    
         <!--优先选择此 Header-->
         <el-menu :default-active="activeIndex" class="jian-header-menu jian-main-header" mode="horizontal" @select="handleSelect">
             <el-menu-item class="jian-header-logo-wrapper" index="1">
@@ -117,9 +132,6 @@
     
         <!--缩小后的 Header-->
         <el-menu :default-active="activeIndex" class="jian-header-menu jian-backup-header" mode="horizontal" @select="handleSelect">
-            <el-menu-item class="jian-header-logo-wrapper jian-backup-header-logo" index="1">
-                <img src="/static/image/jian-header/logo.png" alt="">
-            </el-menu-item>
     
             <el-submenu class="jian-header-sub-menu jian-backup-header-body" index="2">
                 <template slot="title">
@@ -170,7 +182,7 @@ export default {
 
 <style scoped>
 /*媒体查询*/
-/*媒体查询*/
+
 @media screen and (max-width: 960px) {
 
     .jian-main-header {
@@ -180,6 +192,37 @@ export default {
     .jian-backup-header {
         display: block;
     }
+
+    .jian-backup-header-download {
+        box-shadow: 0 4px 8px -4px rgb(150, 150, 150);
+    }
+
+    .jian-backup-download-logo {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding-left: 20px;
+    }
+
+    .jian-backup-download-logo img {
+        max-width: 50px;
+    }
+
+    .jian-backup-download-text {
+        padding-left: 40px;
+        line-height: 50px;
+    }
+
+    .jian-backup-download-free {
+        padding-right: 20px;
+        line-height: 50px;
+        text-align: right;
+    }
+
+    .jian-backup-download-free button {
+        background: rgb(234, 111, 90);
+        border: none;
+    }
 }
 
 @media screen and (min-width: 960px) {
@@ -187,12 +230,17 @@ export default {
         display: block;
     }
 
-    .jian-backup-header{
+    .jian-backup-header {
+        display: none;
+    }
+
+    .jian-backup-header-download {
         display: none;
     }
 }
 
 /*头部样式*/
+
 .jian-header-wrapper {
     border-bottom: 1px solid rgb(240, 240, 240);
 }
@@ -214,16 +262,23 @@ export default {
     color: rgb(234, 111, 90);
 }
 
+
+
+
 /*备选头部样式*/
+
 .jian-backup-header-logo,
 .jian-backup-header-body {
     width: 100%;
     text-align: center;
 }
 
-.jian-backup-header-logo > img {
+.jian-backup-header-logo>img {
     margin: 0 auto;
 }
+
+
+
 
 /*头部 logo 样式*/
 
@@ -235,6 +290,9 @@ export default {
 .jian-header-logo-wrapper img {
     max-height: 26px;
 }
+
+
+
 
 /*头部子菜单样式*/
 
@@ -262,6 +320,9 @@ export default {
     margin-left: 40%;
 }
 
+
+
+
 /*夜间模式气泡*/
 
 .jian-text-setting-item {
@@ -275,6 +336,9 @@ export default {
     text-align: center;
 }
 
+
+
+
 /*写文章按钮*/
 
 .jian-write-btn {
@@ -287,5 +351,9 @@ export default {
     background: white;
     border-bottom: none;
 }
+
+
+
+
 /*搜索框*/
 </style>

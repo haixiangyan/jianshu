@@ -54,7 +54,7 @@ export default {
     data() {
         return {
             catalog: [],
-            hotTopcs: []
+            hotTopcs: [],
         }
     },
     components: {
@@ -108,6 +108,10 @@ export default {
     .jian-backup-bg {
         background: #EFF2F7;
     }
+
+    .jian-hello-content-wrapper {
+        width: 100%
+    }
 }
 
 @media screen and (min-width: 960px) {
@@ -118,8 +122,11 @@ export default {
     .jian-backup-show {
         display: none;
     }
-}
 
+    .jian-hello-content-wrapper {
+        width: 75%
+    }
+}
 
 /*主要内容的样式*/
 
@@ -128,13 +135,11 @@ export default {
     width: 75%;
 }
 
-
 /*左侧侧栏*/
 
 .jian-passages-catalog {
     padding-right: 20px;
 }
-
 
 /*更多专题*/
 
@@ -146,7 +151,6 @@ export default {
     color: #787878;
     font-size: 14px;
 }
-
 
 /*文章分类*/
 
