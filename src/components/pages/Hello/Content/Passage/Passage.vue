@@ -94,8 +94,6 @@ export default {
     padding: 17px 0;
     border-bottom: 1px solid rgb(240, 240, 240);
 }
-
-
 /*作者的详情*/
 
 .jian-author-des {
@@ -149,7 +147,6 @@ export default {
     font-size: 13px;
     line-height: 24px;
 }
-
 
 /*文章附属内容*/
 

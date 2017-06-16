@@ -67,11 +67,8 @@ export default {
 
 <style scoped>
 .jian-re-writer-wrapper {
-    margin-top: 15px;
+    margin-top: 20%;
 }
-
-
-
 /*分页头部*/
 
 .jian-re-writer-header {
@@ -93,8 +90,6 @@ export default {
 .jian-re-writer-pagination {
     display: inline-block;
 }
-
-
 
 /*推荐作者脚注*/
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="jian-hello">
+  <div class="jian-hello-page">
     <!--固定返回头部-->
     <jian-pin></jian-pin>
     <!--首页头部-->

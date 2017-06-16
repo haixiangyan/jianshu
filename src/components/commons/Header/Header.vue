@@ -14,7 +14,7 @@
                 </el-col>
             </el-row>
         </div>
-
+    
         <!--小设备的空格-->
         <div class="jian-backup-space"></div>
     
@@ -34,24 +34,34 @@
                     <i class="fa fa-bell-o">消息</i>
                 </template>
                 <el-menu-item index="4-1">
-                    <i class="fa fa-comment-o fa-2x"></i>
-                    <span> 评论 </span>
+                    <a href="/message">
+                        <i class="fa fa-comment-o fa-2x"></i>
+                        <span> 评论 </span>
+                    </a>
                 </el-menu-item>
                 <el-menu-item index="4-2">
-                    <i class="fa fa-envelope-o"></i>
-                    <span> 简信 </span>
+                    <a href="/message">
+                        <i class="fa fa-envelope-o"></i>
+                        <span> 简信 </span>
+                    </a>
                 </el-menu-item>
                 <el-menu-item index="4-3">
-                    <i class="fa fa-upload"></i>
-                    <span> 投稿 </span>
+                    <a href="/message">
+                        <i class="fa fa-upload"></i>
+                        <span> 投稿 </span>
+                    </a>
                 </el-menu-item>
                 <el-menu-item index="4-4">
-                    <i class="fa fa-heart-o"></i>
-                    <span> 喜欢和赞 </span>
+                    <a href="/message">
+                        <i class="fa fa-heart-o"></i>
+                        <span> 喜欢和赞 </span>
+                    </a>
                 </el-menu-item>
                 <el-menu-item index="4-5">
-                    <i class="fa fa-money"></i>
-                    <span> 赞赏 </span>
+                    <a href="/message">
+                        <i class="fa fa-money"></i>
+                        <span> 赞赏 </span>
+                    </a>
                 </el-menu-item>
             </el-submenu>
     
@@ -141,16 +151,25 @@
                     <i class="el-icon-more"></i>
                 </template>
                 <el-menu-item index="2-1">
-                    <i class="fa fa-compass"></i>
-                    <span> 发现 </span>
+                    <a href="/message">
+                        <i class="fa fa-compass"></i>
+                        <span> 发现 </span>
+                    </a>
+    
                 </el-menu-item>
                 <el-menu-item index="2-2">
-                    <i class="fa fa-book"></i>
-                    <span> 关注 </span>
+                    <a href="/message">
+                        <i class="fa fa-book"></i>
+                        <span> 关注 </span>
+                    </a>
+    
                 </el-menu-item>
                 <el-menu-item index="2-3">
-                    <i class="fa fa-bell-o"></i>
-                    <span> 消息 </span>
+                    <a href="/message">
+                        <i class="fa fa-bell-o"></i>
+                        <span> 消息 </span>
+                    </a>
+    
                 </el-menu-item>
             </el-submenu>
         </el-menu>
@@ -251,6 +270,7 @@ export default {
     }
 }
 
+
 /*头部样式*/
 
 .jian-header-wrapper {
@@ -273,10 +293,6 @@ export default {
 .is-active {
     color: rgb(234, 111, 90);
 }
-
-
-
-
 /*备选头部样式*/
 
 .jian-backup-header-logo,
@@ -289,9 +305,6 @@ export default {
     margin: 0 auto;
 }
 
-
-
-
 /*头部 logo 样式*/
 
 .jian-header-logo-wrapper {
@@ -303,9 +316,6 @@ export default {
     max-height: 26px;
 }
 
-
-
-
 /*头部子菜单样式*/
 
 .jian-header-sub-menu li i {
@@ -314,6 +324,10 @@ export default {
 
 .jian-header-sub-menu li span {
     white-space: pre;
+}
+
+.jian-header-sub-menu li a {
+    text-decoration: none;
 }
 
 .jian-header-sub-menu li {
@@ -332,9 +346,6 @@ export default {
     margin-left: 40%;
 }
 
-
-
-
 /*夜间模式气泡*/
 
 .jian-text-setting-item {
@@ -348,9 +359,6 @@ export default {
     text-align: center;
 }
 
-
-
-
 /*写文章按钮*/
 
 .jian-write-btn {
@@ -363,9 +371,5 @@ export default {
     background: white;
     border-bottom: none;
 }
-
-
-
-
 /*搜索框*/
 </style>

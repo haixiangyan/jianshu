@@ -123,6 +123,11 @@ export default {
 
 <style scoped>
 /*媒体查询*/
+@media screen and (min-width: 1280px) {
+    .jian-hello-content-wrapper {
+        width: 1280px;
+    }
+}
 
 @media screen and (max-width: 960px) {
     /*总体布局*/
