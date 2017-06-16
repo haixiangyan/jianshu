@@ -37,6 +37,7 @@ export default {
   display: block;
   height: 140px;
   margin: 10px 0;
+  text-decoration: none;
 }
 
 .jian-download-app img {
