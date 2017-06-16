@@ -1,5 +1,5 @@
 <template>
-  <a href="#" class="jian-hot-topics-item">
+  <a href="/" class="jian-hot-topics-item">
     <img :src="hotTopicsItem.src" alt="">
   </a>
 </template>

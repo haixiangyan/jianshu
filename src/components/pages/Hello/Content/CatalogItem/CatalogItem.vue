@@ -1,5 +1,5 @@
 <template>
-    <a href="#" class="jian-catalog-wrapper">
+    <a href="/" class="jian-catalog-wrapper">
         <div class="jian-catalog-flex">
             <div class="jian-catalog-avater">
                 <img :src="catalogItem.src" alt="">

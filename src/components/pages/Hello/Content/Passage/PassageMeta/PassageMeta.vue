@@ -1,5 +1,5 @@
 <template>
-    <a href="#" class="jian-passage-item">
+    <a href="/" class="jian-passage-item">
         <i :class="meta"></i>
         <span>{{num > 1000 ? (num/1000).toFixed(1) : num}}</span>
     </a>

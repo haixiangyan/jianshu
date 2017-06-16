@@ -3,10 +3,10 @@
     
         <!--作者介绍-->
         <div class="jian-author-des">
-            <a href="#">
+            <a href="/">
                 <img :src="passage.avatar" alt="">
             </a>
-            <a href="#">
+            <a href="/">
                 {{passage.name}}
             </a>
             <span>{{passage.time}}</span>
@@ -17,7 +17,7 @@
     
             <!--文章标题-->
             <div class="jian-passage-title">
-                <a href="#">{{passage.title}}</a>
+                <a href="/">{{passage.title}}</a>
             </div>
     
             <!--文章的内容-->
@@ -37,7 +37,7 @@
     
         <!--显示文章的图片-->
         <el-col class="jian-passage-img" :span="7">
-            <a href="#">
+            <a href="/">
                 <img :src="passage.img" alt="">
             </a>
         </el-col>
@@ -182,6 +182,6 @@ export default {
 .jian-passage-img img {
     max-width: 90%;
     border-radius: 5px;
-    box-shadow: 0 0 8px -3px;
+    box-shadow: 0 0 8px -3px rgb(72, 87, 106);
 }
 </style>

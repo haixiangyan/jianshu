@@ -1,7 +1,15 @@
 <template>
-  <a class="jian-download-app">
+  <a href="/" class="jian-download-app">
     <img src="/static/image/jian-download-app/download-bg.png" alt="">
     <div class="jian-download-btns">
+      <el-popover
+        ref="jian-download-qrcode"
+        placement="top-start"
+        title="标题"
+        width="200"
+        trigger="hover"
+        content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+      </el-popover>
       <el-button class="jian-download-qrcode-btn" type="primary">
         <i class="fa fa-qrcode"></i>
         <span>扫码</span>
@@ -34,8 +42,8 @@ export default {
 .jian-download-app img {
   max-width: 100%;
 }
-
 /*按钮组*/
+
 .jian-download-btns {
   position: relative;
   top: -60px;
@@ -57,5 +65,17 @@ export default {
 .jian-download-apple-btn {
   background: rgb(109, 172, 244);
   border: none;
+}
+
+.jian-download-qrcode-btn:hover {
+  background-color: #9b9b9b;
+}
+
+.jian-download-android-btn:hover {
+  background-color: #7caf49;
+}
+
+.jian-download-apple-btn:hover {
+  background-color: #6ba1e0;
 }
 </style>

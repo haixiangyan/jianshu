@@ -1,7 +1,7 @@
 <template>
     <el-row class="jian-hello-content-wrapper">
         <!--内容栏的左侧-->
-        <el-col class="jian-passages-catalog jian-backup-width" :span="16">
+        <el-col class="jian-passages-catalog" :span="16">
     
             <!--分类标题-->
             <div class="jian-content-catalog-title jian-backup-show">热门专题</div>
@@ -79,13 +79,13 @@ export default {
             this.$axios.get('/more-passage')
                 .then((res) => {
                     // 获取分类
-                   this.passages = Array.of(...this.passages, ...res.data.data);
+                    this.passages = Array.of(...this.passages, ...res.data.data);
                     // this.passages.push(res.data.data)
                 })
                 .catch((err) => {
                     console.log('axios err', err);
                 });
-            }
+        }
     },
     beforeMount() {
         // 发送请求，获取分类
@@ -125,6 +125,10 @@ export default {
 /*媒体查询*/
 
 @media screen and (max-width: 960px) {
+    /*总体布局*/
+    .jian-hello-content-wrapper {
+        width: 90%;
+    }
 
     .jian-origin-show {
         display: none;
@@ -134,19 +138,19 @@ export default {
         display: block;
     }
 
-    .jian-backup-width {
+    /*文章和分类*/
+    .jian-passages-catalog {
+        margin: 0 auto;
         width: 100%;
+        padding: 0;
     }
 
     .jian-backup-bg {
         background: #EFF2F7;
     }
 
-    .jian-hello-content-wrapper {
-        width: 100%
-    }
-
     .jian-backup-catalog-item {
+        display: inline-block;
         margin: 0 15px 15px 0;
         font-size: 13px;
         padding: 7px;
@@ -155,7 +159,7 @@ export default {
     .jian-backup-passages-more {
         display: block;
         width: 100%;
-        margin: 10px 0;       
+        margin: 10px 0;
         color: #a5a5a5;
     }
 
@@ -165,6 +169,10 @@ export default {
 }
 
 @media screen and (min-width: 960px) {
+    .jian-hello-content-wrapper {
+        width: 75%;
+    }
+
     .jian-origin-show {
         display: block;
     }
@@ -173,8 +181,8 @@ export default {
         display: none;
     }
 
-    .jian-hello-content-wrapper {
-        width: 75%
+    .jian-passages-catalog {
+        padding-right: 20px;
     }
 
     /*更多文章*/
@@ -194,22 +202,13 @@ export default {
         display: none;
     }
 }
-
-
 /*主要内容的样式*/
 
 .jian-hello-content-wrapper {
     margin: 0 auto;
-    width: 75%;
 }
-
 
 /*左侧侧栏*/
-
-.jian-passages-catalog {
-    padding-right: 20px;
-}
-
 
 /*更多专题*/
 
@@ -222,7 +221,6 @@ export default {
     font-size: 14px;
 }
 
-
 /*文章分类*/
 
 .jian-content-catalog-title {
@@ -233,8 +231,6 @@ export default {
     margin-top: 40px;
     margin-bottom: 20px;
 }
-
-
 /*分割线*/
 
 .jian-content-split {

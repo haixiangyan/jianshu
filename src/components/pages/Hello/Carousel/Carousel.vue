@@ -59,7 +59,7 @@ export default {
 }
 
 .jian-carousel-wrapper {
-    margin: 0 auto;
+    margin: 10px auto 0;
 }
 
 /*轮播图的图片*/
