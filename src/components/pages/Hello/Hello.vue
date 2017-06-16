@@ -6,6 +6,8 @@
     <jian-carousel></jian-carousel>
     <!--首页的主要内容-->
     <jian-hello-content></jian-hello-content>
+    <!--首页的脚注-->
+    
   </div>
 </template>
 

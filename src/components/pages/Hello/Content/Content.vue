@@ -15,13 +15,19 @@
                 </a>
             </el-row>
             <el-row class="jian-catalog jian-backup-show">
-                <jian-backup-catalog-item v-for="(catalogItem, index) in catalog" :key="index" :catalogItem="catalogItem"></jian-backup-catalog-item>
+                <jian-backup-catalog-item class="jian-backup-catalog-item" v-for="(catalogItem, index) in catalog" :key="index" :catalogItem="catalogItem"></jian-backup-catalog-item>
             </el-row>
             <!--分割线-->
             <div class="jian-content-split"></div>
             <!--全部文章-->
             <el-row class="jian-passages">
-                Passges
+                <jian-passage v-for="(passage, index) in passages" :key="index" :passage="passage"></jian-passage>
+                <!--更多文章的按钮-->
+                <el-button @click="morePassage" class="jian-passages-more" type="primary">阅读更多</el-button>
+                <el-button @click="morePassage" class="jian-backup-passages-more" type="text">
+                    展开更多文章
+                    <i class="fa fa-angle-down"></i>
+                </el-button>
             </el-row>
         </el-col>
     
@@ -49,12 +55,14 @@ import JianBackupCatalogItem from '@/components/pages/Hello/Content/CatalogItem/
 import JianHotTopicsItem from '@/components/pages/Hello/Content/HotTopicsItem/HotTopicsItem'
 import JianDownloadApp from '@/components/pages/Hello/Content/DownloadApp/DownloadApp'
 import JianReWriterWrapper from '@/components/pages/Hello/Content/ReWriterWrapper/ReWriterWrapper'
+import JianPassage from '@/components/pages/Hello/Content/Passage/Passage'
 
 export default {
     data() {
         return {
             catalog: [],
             hotTopcs: [],
+            passages: []
         }
     },
     components: {
@@ -62,7 +70,22 @@ export default {
         'jian-backup-catalog-item': JianBackupCatalogItem,
         'jian-hot-topics-item': JianHotTopicsItem,
         'jian-download-app': JianDownloadApp,
-        'jian-re-writer-wrapper': JianReWriterWrapper
+        'jian-re-writer-wrapper': JianReWriterWrapper,
+        'jian-passage': JianPassage
+    },
+    methods: {
+        morePassage() {
+            // 发送请求，获取更多文章
+            this.$axios.get('/more-passage')
+                .then((res) => {
+                    // 获取分类
+                   this.passages = Array.of(...this.passages, ...res.data.data);
+                    // this.passages.push(res.data.data)
+                })
+                .catch((err) => {
+                    console.log('axios err', err);
+                });
+            }
     },
     beforeMount() {
         // 发送请求，获取分类
@@ -80,6 +103,16 @@ export default {
             .then((res) => {
                 // 获取分类
                 this.hotTopcs = res.data.data;
+            })
+            .catch((err) => {
+                console.log('axios err', err);
+            });
+
+        // 发送请求，获取文章
+        this.$axios.get('/passage')
+            .then((res) => {
+                // 获取分类
+                this.passages = res.data.data;
             })
             .catch((err) => {
                 console.log('axios err', err);
@@ -112,6 +145,23 @@ export default {
     .jian-hello-content-wrapper {
         width: 100%
     }
+
+    .jian-backup-catalog-item {
+        margin: 0 15px 15px 0;
+        font-size: 13px;
+        padding: 7px;
+    }
+
+    .jian-backup-passages-more {
+        display: block;
+        width: 100%;
+        margin: 10px 0;       
+        color: #a5a5a5;
+    }
+
+    .jian-passages-more {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 960px) {
@@ -126,7 +176,25 @@ export default {
     .jian-hello-content-wrapper {
         width: 75%
     }
+
+    /*更多文章*/
+    .jian-passages-more {
+        display: block;
+        margin: 30px 0 60px;
+        width: 100%;
+        background: #a5a5a5;
+        border: none;
+    }
+
+    .jian-passages-more:hover {
+        background: rgb(155, 155, 155);
+    }
+
+    .jian-backup-passages-more {
+        display: none;
+    }
 }
+
 
 /*主要内容的样式*/
 
@@ -135,11 +203,13 @@ export default {
     width: 75%;
 }
 
+
 /*左侧侧栏*/
 
 .jian-passages-catalog {
     padding-right: 20px;
 }
+
 
 /*更多专题*/
 
@@ -151,6 +221,7 @@ export default {
     color: #787878;
     font-size: 14px;
 }
+
 
 /*文章分类*/
 
@@ -170,7 +241,6 @@ export default {
     border-top: 1px solid rgb(240, 240, 240);
     margin-bottom: 15px;
 }
-
 
 /*推荐样式*/
 

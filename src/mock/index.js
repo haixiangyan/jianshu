@@ -7,12 +7,14 @@ import { login } from './front-page.js'
 import { catalog } from './catalog.js'
 import { hotTopics } from './hotTopics'
 import { reWriter } from './reWriter'
+import { passage } from './passage'
 
 let data = [].concat(
     login,
     catalog,
     hotTopics,
-    reWriter
+    reWriter,
+    passage
 );
 
 data.forEach((res) => {

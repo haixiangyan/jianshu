@@ -14,13 +14,14 @@ export default {
 
 .jian-backup-catalog-wrapper {
     display: inline-block;
-    padding: 7px;
-    margin: 0 15px 15px 0;
     text-decoration: none;
     color: rgb(234, 111, 90);
-    font-size: 13px;
     border-radius: 4px;
     border: 1px solid rgb(234, 111, 90);
+}
+
+.jian-backup-catalog-wrapper:hover {
+  background: rgba(236,97,73,.05);
 }
 
 </style>
