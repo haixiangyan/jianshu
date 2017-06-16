@@ -2,13 +2,7 @@
   <a href="/" class="jian-download-app">
     <img src="/static/image/jian-download-app/download-bg.png" alt="">
     <div class="jian-download-btns">
-      <el-popover
-        ref="jian-download-qrcode"
-        placement="top-start"
-        title="标题"
-        width="200"
-        trigger="hover"
-        content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+      <el-popover ref="jian-download-qrcode" placement="top-start" title="标题" width="200" trigger="hover" content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
       </el-popover>
       <el-button class="jian-download-qrcode-btn" type="primary">
         <i class="fa fa-qrcode"></i>
@@ -34,10 +28,18 @@ export default {
 
 <style scoped>
 .jian-download-app {
+  position: relative;
+  top: 0;
   display: block;
   height: 140px;
   margin: 10px 0;
   text-decoration: none;
+}
+
+.jian-download-app:hover {
+  top: -10px;
+  box-shadow: 0px 12px 8px -4px #48576a;
+  transition: .5s top ease;
 }
 
 .jian-download-app img {

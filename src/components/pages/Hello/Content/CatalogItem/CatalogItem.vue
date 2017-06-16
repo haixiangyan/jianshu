@@ -36,6 +36,10 @@ export default {
     color: rgb(51, 51, 51);   
 }
 
+.jian-catalog-wrapper:hover {
+    box-shadow: 0 0 8px -4px black;
+}
+
 .jian-catalog-flex {
     display: flex;
     align-items: center;
