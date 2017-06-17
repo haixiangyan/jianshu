@@ -23,7 +23,7 @@
             <el-menu-item class="jian-header-logo-wrapper" index="1">
                 <img src="/static/image/jian-header/logo.png" alt="">
             </el-menu-item>
-            <el-menu-item style="margin-left: 50px;" index="2">
+            <el-menu-item :route="$route" style="margin-left: 50px;" index="2">
                 <a href="/">
                     <i class="fa fa-compass">发现</i>
                 </a>
@@ -189,9 +189,9 @@
 
 <script>
 export default {
+    props: ['activeIndex'],
     data() {
         return {
-            activeIndex: '2',
             searchForm: {
                 search: ''
             },

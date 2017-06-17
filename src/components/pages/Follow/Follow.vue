@@ -1,7 +1,7 @@
 <template>
   <div class="jian-hello-page">
     <!--关注页头部-->
-    <jian-header></jian-header>
+    <jian-header :activeIndex="`3`"></jian-header>
     <!--关注页内容-->
     <jian-follow-content></jian-follow-content>
   </div>

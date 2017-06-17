@@ -3,7 +3,7 @@
     <!--固定返回头部-->
     <jian-pin></jian-pin>
     <!--首页头部-->
-    <jian-header></jian-header>
+    <jian-header :activeIndex="`2`"></jian-header>
     <!--首页轮播图-->
     <jian-carousel></jian-carousel>
     <!--首页的主要内容-->
@@ -26,7 +26,6 @@ export default {
   name: 'hello',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   },
   methods: {

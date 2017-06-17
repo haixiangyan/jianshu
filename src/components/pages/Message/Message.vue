@@ -1,7 +1,7 @@
 <template>
     <div class="jian-message-page">
         <!--消息页头部-->
-        <jian-header></jian-header>
+        <jian-header :activeIndex="`4`"></jian-header>
 
         <!--消息页内容-->
         <jian-message-content></jian-message-content>
