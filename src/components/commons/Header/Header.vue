@@ -24,10 +24,14 @@
                 <img src="/static/image/jian-header/logo.png" alt="">
             </el-menu-item>
             <el-menu-item style="margin-left: 50px;" index="2">
-                <i class="fa fa-compass">发现</i>
+                <a href="/">
+                    <i class="fa fa-compass">发现</i>
+                </a>
             </el-menu-item>
             <el-menu-item index="3">
-                <i class="fa fa-book">关注</i>
+                <a href="/follow">
+                    <i class="fa fa-book">关注</i>
+                </a>
             </el-menu-item>
             <el-submenu class="jian-header-sub-menu" index="4">
                 <template slot="title">

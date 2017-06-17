@@ -24,7 +24,7 @@ export default {
         'jian-chat-item': JianChatItem
     },
     beforeMount() {
-        // 发送请求，获取评论
+        // 发送请求，获取聊天
         this.$axios.get('/chat')
             .then((res) => {
                 // 获取分类

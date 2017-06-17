@@ -3,51 +3,53 @@
         <el-col class="jian-message-menu-wrapper jian-origin-show" :span="7">
             <el-menu class="jian-message-menu">
                 <el-menu-item class="jian-message-menu-item" index="1">
-                    <a href="/message/comments">
+                    <router-link to="/message/comments">
                         <i class="fa fa-comment-o"></i>
                         <span>评论</span>
-                    </a>
+                    </router-link>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="2">
-                    <a href="/message/chats">
+                    <router-link to="/message/chats">
                         <i class="fa fa-envelope-o"></i>
                         <span>简信</span>
-                    </a>
+                    </router-link>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="3">
-                    <a href="/message/requests">
+                    <router-link to="/message/requests">
                         <i class="fa fa-upload"></i>
                         <span>投稿请求</span>
-                    </a>
+                    </router-link>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="4">
-                    <a href="/message/loves">
+                    <router-link to="/message/loves">
                         <i class="fa fa-heart-o"></i>
                         <span>喜欢和赞</span>
-                    </a>
+                    </router-link>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="5">
-                    <a href="/message/follows">
+                    <router-link to="/message/follows">
                         <i class="fa fa-user-o"></i>
                         <span>关注</span>
-                    </a>
+                    </router-link>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="6">
-                    <a href="/message/givens">
+                    <router-link to="/message/givens">
                         <i class="fa fa-money"></i>
                         <span>赞赏</span>
-                    </a>
+                    </router-link>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="7">
-                    <a href="/message/others">
+                    <router-link to="/message/others">
                         <i class="fa fa-bars"></i>
                         <span>其他消息</span>
-                    </a>
+                    </router-link>
                 </el-menu-item>
             </el-menu>
         </el-col>
         <el-col class="jian-message-list" :span="17">
-            <router-view></router-view>
+            <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">>
+                <router-view></router-view>
+            </transition>
         </el-col>
     </el-row>
 </template>
@@ -82,7 +84,7 @@ export default {
     }
 
     .jian-message-list {
-        width: 100%;        
+        width: 100%;
     }
 }
 
@@ -107,12 +109,14 @@ export default {
     }
 }
 
+
 /*主要内容区块*/
 
 .jian-message-content-wrapper {
     margin: 0 auto;
     padding: 30px 0;
 }
+
 
 /*消息菜单区块*/
 

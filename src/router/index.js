@@ -11,6 +11,10 @@ import Follow from '@/components/pages/Message/Content/Follow/Follow'
 import Given from '@/components/pages/Message/Content/Given/Given'
 import Other from '@/components/pages/Message/Content/Other/Other'
 
+import FollowPage from '@/components/pages/Follow/Follow'
+import Timeline from '@/components/pages/Follow/Timeline/Timeline'
+import Topic from '@/components/pages/Follow/Topic/Topic'
+
 Vue.use(Router)
 
 export default new Router({
@@ -57,6 +61,24 @@ export default new Router({
         {
           path: '/message/others',
           component: Other
+        }
+      ]
+    },
+    // 关注页
+    {
+      path: '/follow',
+      name: 'Follow',
+      redirect: '/follow/timeline',
+      component: FollowPage,
+      mode: 'history',
+      children: [
+        {
+          path: '/follow/timeline',
+          component: Timeline
+        },
+        {
+          path: '/follow/topic/:id',
+          component: Topic
         }
       ]
     }
