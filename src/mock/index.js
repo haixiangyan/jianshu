@@ -8,13 +8,23 @@ import { catalog } from './catalog.js'
 import { hotTopics } from './hotTopics'
 import { reWriter } from './reWriter'
 import { passage } from './passage'
+import { comment } from './comment'
+import { chat } from './chat'
+import { love } from './love'
+import { follow } from './follow'
+import { other } from './other'
 
 let data = [].concat(
     login,
     catalog,
     hotTopics,
     reWriter,
-    passage
+    passage,
+    comment,
+    chat,
+    love,
+    follow,
+    other
 );
 
 data.forEach((res) => {

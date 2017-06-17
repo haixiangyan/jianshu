@@ -1,34 +1,34 @@
 <template>
-    <div class="jian-comments-wrapper">
+    <div class="jian-others-wrapper">
         <!--标题-->
-        <div class="jian-comments-title">
-            收到的评论
+        <div class="jian-others-title">
+            收到的喜欢和赞
         </div>
         <!--评论列表-->
-        <div class="jian-comments-list">
-            <jian-comment-item v-for="(comment, index) in comments" :comment="comment" :key="index"></jian-comment-item>
+        <div class="jian-others-list">
+            <jian-other-item v-for="(other, index) in others" :other="other" :key="index"></jian-other-item>
         </div>
     </div>
 </template>
 
 <script>
-import JianCommentItem from '@/components/pages/Message/Content/Comment/CommentItem/CommentItem'
+import JianOtherItem from '@/components/pages/Message/Content/Other/OtherItem/OtherItem'
 
 export default {
     data() {
         return {
-            comments: []
+            others: []
         }
     },
     components: {
-        'jian-comment-item': JianCommentItem
+        'jian-other-item': JianOtherItem
     },
     beforeMount() {
         // 发送请求，获取评论
-        this.$axios.get('/comment')
+        this.$axios.get('/other')
             .then((res) => {
                 // 获取分类
-                this.comments = res.data.data;
+                this.others = res.data.data;
             })
             .catch((err) => {
                 console.log('axios err', err);
@@ -40,7 +40,7 @@ export default {
 <style scoped>
 /*标题*/
 
-.jian-comments-title {
+.jian-others-title {
     margin-bottom: 20px;
     color: rgb(51, 51, 51);
     font-size: 14px;

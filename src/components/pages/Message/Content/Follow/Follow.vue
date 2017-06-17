@@ -1,34 +1,34 @@
 <template>
-    <div class="jian-comments-wrapper">
+    <div class="jian-follows-wrapper">
         <!--标题-->
-        <div class="jian-comments-title">
-            收到的评论
+        <div class="jian-follows-title">
+            全部关注
         </div>
         <!--评论列表-->
-        <div class="jian-comments-list">
-            <jian-comment-item v-for="(comment, index) in comments" :comment="comment" :key="index"></jian-comment-item>
+        <div class="jian-follows-list">
+            <jian-follow-item v-for="(follow, index) in follows" :follow="follow" :key="index"></jian-follow-item>
         </div>
     </div>
 </template>
 
 <script>
-import JianCommentItem from '@/components/pages/Message/Content/Comment/CommentItem/CommentItem'
+import JianFollowItem from '@/components/pages/Message/Content/Follow/FollowItem/FollowItem'
 
 export default {
     data() {
         return {
-            comments: []
+            follows: []
         }
     },
     components: {
-        'jian-comment-item': JianCommentItem
+        'jian-follow-item': JianFollowItem
     },
     beforeMount() {
         // 发送请求，获取评论
-        this.$axios.get('/comment')
+        this.$axios.get('/follow')
             .then((res) => {
                 // 获取分类
-                this.comments = res.data.data;
+                this.follows = res.data.data;
             })
             .catch((err) => {
                 console.log('axios err', err);
@@ -40,7 +40,7 @@ export default {
 <style scoped>
 /*标题*/
 
-.jian-comments-title {
+.jian-follows-title {
     margin-bottom: 20px;
     color: rgb(51, 51, 51);
     font-size: 14px;

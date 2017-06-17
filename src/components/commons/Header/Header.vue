@@ -34,33 +34,39 @@
                     <i class="fa fa-bell-o">消息</i>
                 </template>
                 <el-menu-item index="4-1">
-                    <a href="/message">
+                    <a href="/message/comments">
                         <i class="fa fa-comment-o fa-2x"></i>
                         <span> 评论 </span>
                     </a>
                 </el-menu-item>
                 <el-menu-item index="4-2">
-                    <a href="/message">
+                    <a href="/message/chats">
                         <i class="fa fa-envelope-o"></i>
                         <span> 简信 </span>
                     </a>
                 </el-menu-item>
                 <el-menu-item index="4-3">
-                    <a href="/message">
+                    <a href="/message/requests">
                         <i class="fa fa-upload"></i>
                         <span> 投稿 </span>
                     </a>
                 </el-menu-item>
                 <el-menu-item index="4-4">
-                    <a href="/message">
+                    <a href="/message/loves">
                         <i class="fa fa-heart-o"></i>
                         <span> 喜欢和赞 </span>
                     </a>
                 </el-menu-item>
                 <el-menu-item index="4-5">
-                    <a href="/message">
+                    <a href="/message/givens">
                         <i class="fa fa-money"></i>
                         <span> 赞赏 </span>
+                    </a>
+                </el-menu-item>
+                <el-menu-item index="4-5">
+                    <a href="/message/others">
+                        <i class="fa fa-bars"></i>
+                        <span> 其他 </span>
                     </a>
                 </el-menu-item>
             </el-submenu>

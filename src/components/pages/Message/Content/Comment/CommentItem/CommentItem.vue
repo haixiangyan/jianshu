@@ -21,7 +21,7 @@
         <div class="jian-comment-content">
             <p>
                 <a class="jian-comment-at" href="/">@{{comment.at}} </a>
-                {{comment.comment}}
+                {{(comment.comment.length > 90) ? `${comment.comment.slice(0, 90)}...` : comment.comment}}
             </p>
         </div>
         <!--评论 Meta-->
@@ -54,16 +54,9 @@
 import JianCommentMeta from '@/components/pages/Message/Content/Comment/CommentMeta/CommentMeta'
 
 export default {
+    props: ['comment'],
     data() {
         return {
-            comment: {
-                avatar: '/static/image/jian-re-writer/writer-1.jpg',
-                name: '城北闲喵',
-                passage: '为什么你听过很多大道理，但还是过不好这一生',
-                datetime: '2017.04.29 13:52',
-                at: 'hai_guai',
-                comment: '对哇，鸡汤吃不饱是肯定的，没有谁是吃鸡汤长大的，构成血肉骨骼，组成力气智慧的大部分还得靠碳水化合物。感觉人人都想把所谓人生的道理用简单的话说出来，但是很多时候还得非自身经历不可，挂科了才知道该不该背，受挫了才知道怎么爬起来●ｖ●感谢支持，收到这么走心的评论很开心',
-            },
             metas: [
                 {
                     meta: 'fa fa-comment-o',

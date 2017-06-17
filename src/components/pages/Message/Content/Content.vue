@@ -15,31 +15,31 @@
                     </a>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="3">
-                    <a href="/">
+                    <a href="/message/requests">
                         <i class="fa fa-upload"></i>
                         <span>投稿请求</span>
                     </a>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="4">
-                    <a href="/">
+                    <a href="/message/loves">
                         <i class="fa fa-heart-o"></i>
                         <span>喜欢和赞</span>
                     </a>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="5">
-                    <a href="/">
+                    <a href="/message/follows">
                         <i class="fa fa-user-o"></i>
                         <span>关注</span>
                     </a>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="6">
-                    <a href="/">
+                    <a href="/message/givens">
                         <i class="fa fa-money"></i>
                         <span>赞赏</span>
                     </a>
                 </el-menu-item>
                 <el-menu-item class="jian-message-menu-item" index="7">
-                    <a href="/">
+                    <a href="/message/others">
                         <i class="fa fa-bars"></i>
                         <span>其他消息</span>
                     </a>
@@ -113,7 +113,6 @@ export default {
     margin: 0 auto;
     padding: 30px 0;
 }
-
 
 /*消息菜单区块*/
 
