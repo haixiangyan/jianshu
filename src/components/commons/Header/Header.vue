@@ -161,14 +161,14 @@
                     <i class="el-icon-more"></i>
                 </template>
                 <el-menu-item index="2-1">
-                    <a href="/message">
+                    <a href="/">
                         <i class="fa fa-compass"></i>
                         <span> 发现 </span>
                     </a>
     
                 </el-menu-item>
                 <el-menu-item index="2-2">
-                    <a href="/message">
+                    <a href="/follow">
                         <i class="fa fa-book"></i>
                         <span> 关注 </span>
                     </a>
