@@ -22,6 +22,7 @@
             <!--全部文章-->
             <el-row class="jian-passages">
                 <jian-passage v-for="(passage, index) in passages" :key="index" :passage="passage"></jian-passage>
+                <jian-loading v-show="isLoading"></jian-loading>
                 <!--更多文章的按钮-->
                 <el-button @click="morePassage" class="jian-passages-more" type="primary">阅读更多</el-button>
                 <el-button @click="morePassage" class="jian-backup-passages-more" type="text">
@@ -56,13 +57,15 @@ import JianHotTopicsItem from '@/components/pages/Hello/Content/HotTopicsItem/Ho
 import JianDownloadApp from '@/components/pages/Hello/Content/DownloadApp/DownloadApp'
 import JianReWriterWrapper from '@/components/pages/Hello/Content/ReWriterWrapper/ReWriterWrapper'
 import JianPassage from '@/components/pages/Hello/Content/Passage/Passage'
+import JianLoading from '@/components/pages/Hello/Content/Passage/Loading/Loading'
 
 export default {
     data() {
         return {
             catalog: [],
             hotTopcs: [],
-            passages: []
+            passages: [],
+            isLoading: false
         }
     },
     components: {
@@ -71,20 +74,26 @@ export default {
         'jian-hot-topics-item': JianHotTopicsItem,
         'jian-download-app': JianDownloadApp,
         'jian-re-writer-wrapper': JianReWriterWrapper,
-        'jian-passage': JianPassage
+        'jian-passage': JianPassage,
+        'jian-loading': JianLoading
     },
     methods: {
         morePassage() {
             // 发送请求，获取更多文章
-            this.$axios.get('/more-passage')
-                .then((res) => {
-                    // 获取分类
-                    this.passages = Array.of(...this.passages, ...res.data.data);
-                    // this.passages.push(res.data.data)
-                })
-                .catch((err) => {
-                    console.log('axios err', err);
-                });
+            this.isLoading = true;
+            setTimeout(() => {
+                this.$axios.get('/more-passage')
+                    .then((res) => {
+                        // 获取分类
+                        this.passages = Array.of(...this.passages, ...res.data.data);
+                        this.isLoading = false;
+                    })
+                    .catch((err) => {
+                        console.log('axios err', err);
+                    });
+                this.isLoading = false
+            }, 3000);
+
         }
     },
     beforeMount() {
@@ -123,6 +132,7 @@ export default {
 
 <style scoped>
 /*媒体查询*/
+
 @media screen and (min-width: 1280px) {
     .jian-hello-content-wrapper {
         width: 1280px;
@@ -207,13 +217,17 @@ export default {
         display: none;
     }
 }
+
+
 /*主要内容的样式*/
 
 .jian-hello-content-wrapper {
     margin: 0 auto;
 }
 
+
 /*左侧侧栏*/
+
 
 /*更多专题*/
 
@@ -226,6 +240,7 @@ export default {
     font-size: 14px;
 }
 
+
 /*文章分类*/
 
 .jian-content-catalog-title {
@@ -236,12 +251,15 @@ export default {
     margin-top: 40px;
     margin-bottom: 20px;
 }
+
+
 /*分割线*/
 
 .jian-content-split {
     border-top: 1px solid rgb(240, 240, 240);
     margin-bottom: 15px;
 }
+
 
 /*推荐样式*/
 

@@ -4,17 +4,17 @@
         <el-col class="jian-follow-menu-wrapper jian-origin-show" :span="7">
             <el-row class="jian-follow-menu-header">
                 <el-col :span="12">
-                    <el-dropdown>
+                    <el-dropdown @command="chooseType">
                         <span class="jian-follow-dropdown-title">
                             全部关注
                             <i class="el-icon-caret-bottom el-icon--right"></i>
                         </span>
                         <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item class="jian-follow-dropdown">全部关注</el-dropdown-item>
-                            <el-dropdown-item class="jian-follow-dropdown">只看作者</el-dropdown-item>
-                            <el-dropdown-item class="jian-follow-dropdown">只看专题</el-dropdown-item>
-                            <el-dropdown-item class="jian-follow-dropdown">只看文集</el-dropdown-item>
-                            <el-dropdown-item class="jian-follow-dropdown">只看推送更新</el-dropdown-item>
+                            <el-dropdown-item command="1" class="jian-follow-dropdown">全部关注</el-dropdown-item>
+                            <el-dropdown-item command="2" class="jian-follow-dropdown">只看作者</el-dropdown-item>
+                            <el-dropdown-item command="3" class="jian-follow-dropdown">只看专题</el-dropdown-item>
+                            <el-dropdown-item command="4" class="jian-follow-dropdown">只看文集</el-dropdown-item>
+                            <el-dropdown-item command="5" class="jian-follow-dropdown">只看推送更新</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
                 </el-col>
@@ -33,7 +33,7 @@
                         <span>简友圈</span>
                     </router-link>
                 </el-menu-item>
-                <el-menu-item v-for="(topic, index) in followTopics" :key="index" :topic="topic" class="jian-follow-menu-item" :index="`${index+1}`">
+                <el-menu-item v-for="(topic, index) in topicsData" :key="index" :topic="topic" class="jian-follow-menu-item" :index="`${index+1}`">
                     <router-link :to="topic.route">
                         <img :src="topic.avatar"></img>
                         <span>{{topic.name}}</span>
@@ -53,7 +53,8 @@
 export default {
     data() {
         return {
-            followTopics: []
+            followTopics: [],
+            topicsData: []
         }
     },
     beforeMount() {
@@ -62,10 +63,23 @@ export default {
             .then((res) => {
                 // 获取分类
                 this.followTopics = res.data.data;
+                this.topicsData = this.followTopics;
             })
             .catch((err) => {
                 console.log('axios err', err);
             });
+    },
+    methods: {
+        chooseType(command) {
+            if (command === '1') {
+                this.topicsData = this.followTopics;
+                return ;
+            }
+
+            this.topicsData = this.followTopics.filter((elem) => {
+                return elem.type.includes(`${command}`);
+            })
+        }
     }
 }
 </script>

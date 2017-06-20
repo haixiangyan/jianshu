@@ -130,8 +130,8 @@ export default {
     },
     beforeRouteUpdate(to, from, next) {
         // 获取不同的数据
-        this.id = to.params.id;
         this.init();
+        this.id = to.params.id;
         next();
     },
 }

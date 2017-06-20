@@ -43,7 +43,8 @@ export const follow = [{
         let follow = {
           avatar: `/static/image/jian-re-writer/writer-${i}.jpg`,
           name: Random.cname(),
-          route: '/follow/topic/'+i
+          route: '/follow/topic/'+i,
+          type: 'all ' + Random.natural(2, 5)
         }
 
         data.push(follow);
