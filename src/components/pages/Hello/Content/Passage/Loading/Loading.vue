@@ -56,28 +56,28 @@ export default {
 <style scoped>
 @keyframes loading-1 {
     from {
-        width: 220px;
+        width: 30%;
     }
     to {
-        width: 320px;
+        width: 60%;
     }
 }
 
 @keyframes loading-2 {
     from {
-        width: 500px;
+        width: 90%;
     }
     to {
-        width: 200px;
+        width: 30%;
     }
 }
 
 @keyframes loading-3 {
     from {
-        width: 300px;
+        width: 30%;
     }
     to {
-        width: 500px;
+        width: 90%;
     }
 }
 
